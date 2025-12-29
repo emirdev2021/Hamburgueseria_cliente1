@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menú digital y pedidos online">
+    <title>Menú Digital - Mi Hamburguesería</title>
+    
+    <!-- TailwindCSS desde CDN (no requiere instalación) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para iconos (opcional, pero útil) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Nuestro archivo de estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+    
+    <!-- ============================================
+         HEADER / ENCABEZADO
+         ============================================ -->
+    <header id="header" class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo del negocio (se carga desde config.js) -->
+                <div class="flex items-center space-x-3">
+                    <img id="logo-negocio" src="" alt="Logo" class="h-12 w-12 rounded-full object-cover">
+                    <h1 id="nombre-negocio" class="text-xl font-bold text-gray-800"></h1>
+                </div>
+                
+                <!-- Botón del carrito (muestra cantidad de items) -->
+                <button id="btn-carrito" class="relative p-2 rounded-full hover:bg-gray-100 transition">
+                    <i class="fas fa-shopping-cart text-2xl text-gray-700"></i>
+                    <!-- Badge con cantidad de items -->
+                    <span id="badge-carrito" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         CONTENEDOR PRINCIPAL
+         ============================================ -->
+    <main class="container mx-auto px-4 py-6 pb-32">
+        
+        <!-- Filtros de Categorías -->
+        <div id="filtros-categorias" class="mb-6 flex gap-2 overflow-x-auto pb-2">
+            <!-- Los botones de categorías se generan dinámicamente desde menu.json -->
+        </div>
+
+        <!-- Listado de Productos -->
+        <div id="contenedor-productos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Los productos se generan dinámicamente desde menu.json -->
+        </div>
+
+        <!-- Mensaje cuando no hay productos -->
+        <div id="sin-productos" class="text-center py-12 hidden">
+            <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+            <p class="text-gray-500 text-lg">No se encontraron productos</p>
+        </div>
+
+    </main>
+
+    <!-- ============================================
+         CARRITO FLOTANTE
+         ============================================ -->
+    <div id="carrito-flotante" class="fixed bottom-0 left-0 right-0 bg-white shadow-2xl rounded-t-3xl transform translate-y-full transition-transform duration-300 z-50">
+        <div class="container mx-auto px-4 py-4">
+            
+            <!-- Header del Carrito -->
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-bold text-gray-800">
+                    <i class="fas fa-shopping-cart mr-2"></i>Mi Pedido
+                </h2>
+                <button id="btn-cerrar-carrito" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Lista de Items del Carrito -->
+            <div id="items-carrito" class="max-h-64 overflow-y-auto mb-4">
+                <!-- Los items se agregan dinámicamente aquí -->
+                <p id="carrito-vacio" class="text-center text-gray-500 py-8">
+                    <i class="fas fa-shopping-basket text-4xl mb-2 block"></i>
+                    Tu carrito está vacío
+                </p>
+            </div>
+
+            <!-- Total del Pedido -->
+            <div class="border-t pt-4 mb-4">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-lg font-semibold text-gray-700">Total:</span>
+                    <span id="total-carrito" class="text-2xl font-bold">$0</span>
+                </div>
+            </div>
+
+            <!-- Botón Enviar Pedido a WhatsApp -->
+            <button id="btn-enviar-whatsapp" class="w-full py-4 rounded-lg font-bold text-white text-lg shadow-lg hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                <i class="fab fa-whatsapp mr-2"></i>
+                Enviar Pedido por WhatsApp
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Overlay oscuro cuando el carrito está abierto (solo en móvil) -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <!-- ============================================
+         SCRIPTS
+         ============================================ -->
+    <!-- Primero cargamos la configuración del negocio -->
+    <script src="config.js"></script>
+    
+    <!-- Finalmente cargamos la lógica de la aplicación -->
+    <!-- (El menú se carga dinámicamente desde app.js usando fetch) -->
+    <script src="app.js"></script>
+
+</body>
+</html>

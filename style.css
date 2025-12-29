@@ -1,0 +1,89 @@
+/* ============================================
+   ESTILOS PERSONALIZADOS
+   ============================================
+   Este archivo contiene estilos adicionales que complementan TailwindCSS.
+   Los colores principales se aplican dinámicamente desde config.js
+*/
+
+/* Estilos para el scrollbar del carrito (más elegante) */
+#items-carrito::-webkit-scrollbar {
+    width: 6px;
+}
+
+#items-carrito::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#items-carrito::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+#items-carrito::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Animación suave para los productos al aparecer */
+.producto-card {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el botón de categoría activa */
+.categoria-activa {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Transición suave para el carrito flotante */
+#carrito-flotante {
+    max-height: 90vh;
+}
+
+/* Estilos para inputs de cantidad en el carrito */
+.cantidad-input {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.cantidad-input::-webkit-inner-spin-button,
+.cantidad-input::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Chrome, Safari */
+    margin: 0;
+}
+
+/* Efecto hover mejorado para botones */
+.btn-hover:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+/* Estilos para productos no disponibles */
+.producto-no-disponible {
+    opacity: 0.6;
+    position: relative;
+}
+
+.producto-no-disponible::after {
+    content: "No disponible";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+

@@ -1,0 +1,99 @@
+{
+  "categorias": [
+    {
+      "id": "hamburguesas",
+      "nombre": "Hamburguesas",
+      "icono": "🍔"
+    },
+    {
+      "id": "pizzas",
+      "nombre": "Pizzas",
+      "icono": "🍕"
+    },
+    {
+      "id": "bebidas",
+      "nombre": "Bebidas",
+      "icono": "🥤"
+    },
+    {
+      "id": "postres",
+      "nombre": "Postres",
+      "icono": "🍰"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Cheese Burger Simple",
+      "descripcion": "Carne, lechuga, tomate, cebolla y salsa especial",
+      "precio": 11500,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Hamburguesa+Clasica",
+      "disponible": true
+    },
+    {
+      "id": 2,
+      "nombre": "Cheese Burger Doble",
+      "descripcion": "Doble carne, doble queso, bacon y salsa BBQ",
+      "precio": 13500,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Hamburguesa+Doble",
+      "disponible": true
+    },
+    {
+      "id": 3,
+      "nombre": "Cheese Burger triple",
+      "descripcion": "Triple carne, triple queso, triple bacon y salsa BBQ",
+      "precio": 15500,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/4ECDC4/FFFFFF?text=Pizza+Margarita",
+      "disponible": true
+    },
+    {
+      "id": 4,
+      "nombre": "Cheese Burger cuadruple",
+      "descripcion": "Cuadruple carne, cuadruple queso, cuadruple bacon y salsa BBQ",
+      "precio": 17500,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/4ECDC4/FFFFFF?text=Pizza+Pepperoni",
+      "disponible": true
+    },
+    {
+      "id": 5,
+      "nombre": "CheeseBacon Simple",
+      "descripcion": "Carne,queso cheddar",
+      "precio": 13000,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Coca+Cola",
+      "disponible": true
+    },
+    {
+      "id": 6,
+      "nombre": "CheeseBacon Doble",
+      "descripcion": "Doble carne, doble queso",
+      "precio": 15000,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Agua+Mineral",
+      "disponible": true
+    },
+    {
+      "id": 7,
+      "nombre": "Cheesebacon Triple",
+      "descripcion": "Triple carne, triple queso, triple bacon y salsa BBQ",
+      "precio": 17000,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Brownie",
+      "disponible": true
+    },
+    {
+      "id": 8,
+      "nombre": "BurgaArgenta Simple",
+      "descripcion": "Lechuga,tomate,jamon y queso",
+      "precio": 13000,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
+      "disponible": true
+    }
+  ]
+}
+
