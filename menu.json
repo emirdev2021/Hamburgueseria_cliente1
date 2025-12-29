@@ -11,14 +11,24 @@
       "icono": "🍕"
     },
     {
-      "id": "bebidas",
-      "nombre": "Bebidas",
-      "icono": "🥤"
+      "id": "sandwiches",
+      "nombre": "Sandwiches",
+      "icono": "🥪"
     },
     {
-      "id": "postres",
-      "nombre": "Postres",
-      "icono": "🍰"
+      "id": "empanadas",
+      "nombre": "Empanadas",
+      "icono": "🥟"
+    },
+    {
+      "id": "papas",
+      "nombre": "Papas",
+      "icono": "🍟"
+    },
+    {
+      "id": "combos",
+      "nombre": "Combos",
+      "icono": "🎁"
     }
   ],
   "productos": [
@@ -93,7 +103,285 @@
       "categoria": "hamburguesas",
       "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
       "disponible": true
+    },
+    {
+      "id": 9,
+      "nombre": "BurgaArgenta Doble",
+      "descripcion": "Doble carne, doble queso, doble jamon",
+      "precio": 15000,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
+      "disponible": true
+    },
+    {
+      "id": 10,
+      "nombre": "BurgaDorada Simple",
+      "descripcion": "carne,bacon,cebolla caramelizada y bano de queso cheddar",
+      "precio": 15000,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
+      "disponible": true
+    },
+    {
+      "id": 11,
+      "nombre": "BurgaDorada Doble",
+      "descripcion": "Doble carne, doble queso, doble bacon, doble cebolla caramelizada y bano de queso cheddar",
+      "precio": 17000,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
+      "disponible": true
+    },
+    {
+      "id": 12,
+      "nombre": "BurgaDorada Triple",
+      "descripcion": "Triple carne, triple queso, triple bacon, triple cebolla caramelizada y bano de queso cheddar",
+      "precio": 19000,
+      "categoria": "hamburguesas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
+      "disponible": true
+    },
+    {
+      "id": 13,
+      "nombre": "Muzzarella",
+      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELLA, OREGANO Y ACEITUNAS",
+      "precio": 13000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Muzzarella",
+      "disponible": true
+    },
+    {
+      "id": 14,
+      "nombre": "Napolitana",
+      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA, TOMATE Y AJO",
+      "precio": 18000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Napolitana",
+      "disponible": true
+    },
+    {
+      "id": 15,
+      "nombre": "Especial",
+      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA JAMÓN Y MORRONES",
+      "precio": 18000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Especial",
+      "disponible": true
+    },
+    {
+      "id": 16,
+      "nombre": "Primavera",
+      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA Y HUEVO PICADO",
+      "precio": 20000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Primavera",
+      "disponible": true
+    },
+    {
+      "id": 17,
+      "nombre": "Americana",
+      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA Y HUEVO FRITO",
+      "precio": 20000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Americana",
+      "disponible": true
+    },
+    {
+      "id": 18,
+      "nombre": "Cheddar",
+      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA Y QUESO CHEDDAR",
+      "precio": 22000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Cheddar",
+      "disponible": true
+    },
+    {
+      "id": 19,
+      "nombre": "Fugazzeta",
+      "descripcion": "QUESO, CEBOLLA Y ACEITUNAS",
+      "precio": 22000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Fugazzeta",
+      "disponible": true
+    },
+    {
+      "id": 20,
+      "nombre": "Calabresa",
+      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA Y LONGANIZA CALABRESA",
+      "precio": 22000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Calabresa",
+      "disponible": true
+    },
+    {
+      "id": 21,
+      "nombre": "4 Sabores",
+      "descripcion": "NAPOLITANA + ESPECIAL + PRIMAVERA + CHEDDAR",
+      "precio": 22000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=4+Sabores",
+      "disponible": true
+    },
+    {
+      "id": 22,
+      "nombre": "Milapizza",
+      "descripcion": "SALSA DE TOMATE DE LA CASA, MILANESA, PAPAS FRITAS, QUESO CHEDDAR, MOZZARELA Y HUEVOS FRITOS",
+      "precio": 35000,
+      "categoria": "pizzas",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Milapizza",
+      "disponible": true
+    },
+    {
+      "id": 23,
+      "nombre": "Sandwich de Mila (Simple)",
+      "descripcion": "Milanesa en pan",
+      "precio": 9000,
+      "categoria": "sandwiches",
+      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Sandwich+Mila+Simple",
+      "disponible": true
+    },
+    {
+      "id": 24,
+      "nombre": "Sandwich de Mila XL",
+      "descripcion": "CON HUEVO, LECHUGA, TOMATE, JAMÓN Y QUESO Y FRITAS",
+      "precio": 15000,
+      "categoria": "sandwiches",
+      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Sandwich+Mila+XL",
+      "disponible": true
+    },
+    {
+      "id": 25,
+      "nombre": "Bondiola Desmenuzada",
+      "descripcion": "CON FRITAS",
+      "precio": 15000,
+      "categoria": "sandwiches",
+      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Bondiola+Desmenuzada",
+      "disponible": true
+    },
+    {
+      "id": 26,
+      "nombre": "Empanada - Carne (Unidad)",
+      "descripcion": "Empanada de carne",
+      "precio": 2000,
+      "categoria": "empanadas",
+      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Carne",
+      "disponible": true
+    },
+    {
+      "id": 27,
+      "nombre": "Empanada - Pollo (Unidad)",
+      "descripcion": "Empanada de pollo",
+      "precio": 2000,
+      "categoria": "empanadas",
+      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Pollo",
+      "disponible": true
+    },
+    {
+      "id": 28,
+      "nombre": "Empanada - Jamón y Queso (Unidad)",
+      "descripcion": "Empanada de jamón y queso",
+      "precio": 2000,
+      "categoria": "empanadas",
+      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Jamon+Queso",
+      "disponible": true
+    },
+    {
+      "id": 29,
+      "nombre": "Empanada - Calabresa (Unidad)",
+      "descripcion": "Empanada de calabresa",
+      "precio": 2000,
+      "categoria": "empanadas",
+      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Calabresa",
+      "disponible": true
+    },
+    {
+      "id": 30,
+      "nombre": "Empanada - Cebolla y Queso (Unidad)",
+      "descripcion": "Empanada de cebolla y queso",
+      "precio": 2000,
+      "categoria": "empanadas",
+      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Cebolla+Queso",
+      "disponible": true
+    },
+    {
+      "id": 31,
+      "nombre": "Empanada - Bondiola (Unidad)",
+      "descripcion": "Empanada de bondiola",
+      "precio": 2000,
+      "categoria": "empanadas",
+      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Bondiola",
+      "disponible": true
+    },
+    {
+      "id": 32,
+      "nombre": "Empanadas - 1/12 Docena (Variedad)",
+      "descripcion": "Pack 1/12 docena de empanadas - variedad",
+      "precio": 11000,
+      "categoria": "empanadas",
+      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Pack+1_12+Docena",
+      "disponible": true
+    },
+    {
+      "id": 33,
+      "nombre": "Empanadas - Docena (Variedad)",
+      "descripcion": "Docena de empanadas - variedad",
+      "precio": 20000,
+      "categoria": "empanadas",
+      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Docena+Empanadas",
+      "disponible": true
+    },
+    {
+      "id": 34,
+      "nombre": "Papas Fritas",
+      "descripcion": "Porción de papas fritas",
+      "precio": 6000,
+      "categoria": "papas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Papas+Fritas",
+      "disponible": true
+    },
+    {
+      "id": 35,
+      "nombre": "Box chica con cheddar y verdeo",
+      "descripcion": "Box chica de papas con cheddar y verdeo",
+      "precio": 12000,
+      "categoria": "papas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Box+Chica+Papas",
+      "disponible": true
+    },
+    {
+      "id": 36,
+      "nombre": "Caja familiar de papas con cheddar y verdeo",
+      "descripcion": "Caja familiar de papas con cheddar y verdeo",
+      "precio": 20000,
+      "categoria": "papas",
+      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Caja+Familiar+Papas",
+      "disponible": true
+    },
+    {
+      "id": 37,
+      "nombre": "3 Muzzas",
+      "descripcion": "Tres pizzas Muzzarella",
+      "precio": 35000,
+      "categoria": "combos",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=3+Muzzas",
+      "disponible": true
+    },
+    {
+      "id": 38,
+      "nombre": "1 Muzzas + 1/2 Docena Empanadas",
+      "descripcion": "Combo: 1 pizza Muzzarella + 1/2 docena de empanadas",
+      "precio": 22000,
+      "categoria": "combos",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Combo+Muzza+Empanadas",
+      "disponible": true
+    },
+    {
+      "id": 39,
+      "nombre": "Mila a la Napo con papas y 2 huevos",
+      "descripcion": "CON PAPAS FRITAS Y 2 HUEVOS FRITOS (COMEN 2)",
+      "precio": 20000,
+      "categoria": "combos",
+      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Mila+Napo+Combo",
+      "disponible": true
     }
   ]
 }
-
