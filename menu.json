@@ -1,386 +1,304 @@
 {
   "categorias": [
-    {
-      "id": "hamburguesas",
-      "nombre": "Hamburguesas",
-      "icono": "🍔"
-    },
-    {
-      "id": "pizzas",
-      "nombre": "Pizzas",
-      "icono": "🍕"
-    },
-    {
-      "id": "sandwiches",
-      "nombre": "Sandwiches",
-      "icono": "🥪"
-    },
-    {
-      "id": "empanadas",
-      "nombre": "Empanadas",
-      "icono": "🥟"
-    },
-    {
-      "id": "papas",
-      "nombre": "Papas",
-      "icono": "🍟"
-    },
-    {
-      "id": "combos",
-      "nombre": "Combos",
-      "icono": "🎁"
-    }
+    { "id": "pizzas", "nombre": "Pizzas a la Parrilla", "icono": "🍕" },
+    { "id": "sandwiches", "nombre": "Sándwiches", "icono": "🥪" },
+    { "id": "hamburguesas", "nombre": "Hamburguesas", "icono": "🍔" },
+    { "id": "empanadas", "nombre": "Empanadas", "icono": "🥟" },
+    { "id": "papas", "nombre": "Papas Fritas", "icono": "🍟" },
+    { "id": "combos", "nombre": "Combos", "icono": "🔥" }
   ],
   "productos": [
     {
       "id": 1,
-      "nombre": "Cheese Burger Simple",
-      "descripcion": "Carne, lechuga, tomate, cebolla y salsa especial",
-      "precio": 11500,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Hamburguesa+Clasica",
+      "nombre": "Muzzarella",
+      "descripcion": "Salsa de tomate, mozzarella, orégano y aceitunas",
+      "precio": 13000,
+      "categoria": "pizzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 2,
-      "nombre": "Cheese Burger Doble",
-      "descripcion": "Doble carne, doble queso, bacon y salsa BBQ",
-      "precio": 13500,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Hamburguesa+Doble",
+      "nombre": "Napolitana",
+      "descripcion": "Salsa, mozzarella, tomate y ajo",
+      "precio": 18000,
+      "categoria": "pizzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 3,
-      "nombre": "Cheese Burger triple",
-      "descripcion": "Triple carne, triple queso, triple bacon y salsa BBQ",
-      "precio": 15500,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/4ECDC4/FFFFFF?text=Pizza+Margarita",
+      "nombre": "Especial",
+      "descripcion": "Salsa, mozzarella, jamón y morrones",
+      "precio": 18000,
+      "categoria": "pizzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 4,
-      "nombre": "Cheese Burger cuadruple",
-      "descripcion": "Cuadruple carne, cuadruple queso, cuadruple bacon y salsa BBQ",
-      "precio": 17500,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/4ECDC4/FFFFFF?text=Pizza+Pepperoni",
+      "nombre": "Primavera",
+      "descripcion": "Salsa, mozzarella y huevo picado",
+      "precio": 20000,
+      "categoria": "pizzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 5,
-      "nombre": "CheeseBacon Simple",
-      "descripcion": "Carne,queso cheddar",
-      "precio": 13000,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Coca+Cola",
+      "nombre": "Americana",
+      "descripcion": "Salsa, mozzarella y huevo frito",
+      "precio": 20000,
+      "categoria": "pizzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 6,
-      "nombre": "CheeseBacon Doble",
-      "descripcion": "Doble carne, doble queso",
-      "precio": 15000,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Agua+Mineral",
+      "nombre": "Cheddar",
+      "descripcion": "Salsa, mozzarella y queso cheddar",
+      "precio": 22000,
+      "categoria": "pizzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 7,
-      "nombre": "Cheesebacon Triple",
-      "descripcion": "Triple carne, triple queso, triple bacon y salsa BBQ",
-      "precio": 17000,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Brownie",
+      "nombre": "Fugazzeta",
+      "descripcion": "Queso, cebolla y aceitunas",
+      "precio": 22000,
+      "categoria": "pizzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 8,
-      "nombre": "BurgaArgenta Simple",
-      "descripcion": "Lechuga,tomate,jamon y queso",
-      "precio": 13000,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
+      "nombre": "Calabresa",
+      "descripcion": "Salsa, mozzarella y longaniza calabresa",
+      "precio": 22000,
+      "categoria": "pizzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 9,
-      "nombre": "BurgaArgenta Doble",
-      "descripcion": "Doble carne, doble queso, doble jamon",
-      "precio": 15000,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
+      "nombre": "4 Sabores",
+      "descripcion": "Napolitana + Especial + Primavera + Cheddar",
+      "precio": 22000,
+      "categoria": "pizzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 10,
-      "nombre": "BurgaDorada Simple",
-      "descripcion": "carne,bacon,cebolla caramelizada y bano de queso cheddar",
-      "precio": 15000,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
-      "disponible": true
-    },
-    {
-      "id": 11,
-      "nombre": "BurgaDorada Doble",
-      "descripcion": "Doble carne, doble queso, doble bacon, doble cebolla caramelizada y bano de queso cheddar",
-      "precio": 17000,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
-      "disponible": true
-    },
-    {
-      "id": 12,
-      "nombre": "BurgaDorada Triple",
-      "descripcion": "Triple carne, triple queso, triple bacon, triple cebolla caramelizada y bano de queso cheddar",
-      "precio": 19000,
-      "categoria": "hamburguesas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Flan",
-      "disponible": true
-    },
-    {
-      "id": 13,
-      "nombre": "Muzzarella",
-      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELLA, OREGANO Y ACEITUNAS",
-      "precio": 13000,
+      "nombre": "Milapizza",
+      "descripcion": "Base de milanesa, salsa, papas fritas, cheddar, mozzarella y huevos fritos",
+      "precio": 35000,
       "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Muzzarella",
-      "disponible": true
-    },
-    {
-      "id": 14,
-      "nombre": "Napolitana",
-      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA, TOMATE Y AJO",
-      "precio": 18000,
-      "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Napolitana",
-      "disponible": true
-    },
-    {
-      "id": 15,
-      "nombre": "Especial",
-      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA JAMÓN Y MORRONES",
-      "precio": 18000,
-      "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Especial",
-      "disponible": true
-    },
-    {
-      "id": 16,
-      "nombre": "Primavera",
-      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA Y HUEVO PICADO",
-      "precio": 20000,
-      "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Primavera",
-      "disponible": true
-    },
-    {
-      "id": 17,
-      "nombre": "Americana",
-      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA Y HUEVO FRITO",
-      "precio": 20000,
-      "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Americana",
-      "disponible": true
-    },
-    {
-      "id": 18,
-      "nombre": "Cheddar",
-      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA Y QUESO CHEDDAR",
-      "precio": 22000,
-      "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Cheddar",
-      "disponible": true
-    },
-    {
-      "id": 19,
-      "nombre": "Fugazzeta",
-      "descripcion": "QUESO, CEBOLLA Y ACEITUNAS",
-      "precio": 22000,
-      "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Fugazzeta",
+      "tipo": "simple",
       "disponible": true
     },
     {
       "id": 20,
-      "nombre": "Calabresa",
-      "descripcion": "SALSA DE TOMATE DE LA CASA, MOZZARELA Y LONGANIZA CALABRESA",
-      "precio": 22000,
-      "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Calabresa",
+      "nombre": "Sándwich de Mila (Simple)",
+      "descripcion": "Sándwich de milanesa clásico",
+      "precio": 9000,
+      "categoria": "sandwiches",
+      "tipo": "adicionales",
+      "adicionales": [
+        { "nombre": "Extra Cheddar", "precio": 2500 },
+        { "nombre": "Verdeo", "precio": 2500 },
+        { "nombre": "Salchicha", "precio": 2500 }
+      ],
       "disponible": true
     },
     {
       "id": 21,
-      "nombre": "4 Sabores",
-      "descripcion": "NAPOLITANA + ESPECIAL + PRIMAVERA + CHEDDAR",
-      "precio": 22000,
-      "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=4+Sabores",
+      "nombre": "Sándwich de Mila XL",
+      "descripcion": "Con huevo, lechuga, tomate, jamón, queso y fritas",
+      "precio": 15000,
+      "categoria": "sandwiches",
+      "tipo": "adicionales",
+      "adicionales": [
+        { "nombre": "Extra Cheddar", "precio": 2500 },
+        { "nombre": "Verdeo", "precio": 2500 },
+        { "nombre": "Salchicha", "precio": 2500 }
+      ],
       "disponible": true
     },
     {
       "id": 22,
-      "nombre": "Milapizza",
-      "descripcion": "SALSA DE TOMATE DE LA CASA, MILANESA, PAPAS FRITAS, QUESO CHEDDAR, MOZZARELA Y HUEVOS FRITOS",
-      "precio": 35000,
-      "categoria": "pizzas",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Milapizza",
-      "disponible": true
-    },
-    {
-      "id": 23,
-      "nombre": "Sandwich de Mila (Simple)",
-      "descripcion": "Milanesa en pan",
-      "precio": 9000,
-      "categoria": "sandwiches",
-      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Sandwich+Mila+Simple",
-      "disponible": true
-    },
-    {
-      "id": 24,
-      "nombre": "Sandwich de Mila XL",
-      "descripcion": "CON HUEVO, LECHUGA, TOMATE, JAMÓN Y QUESO Y FRITAS",
-      "precio": 15000,
-      "categoria": "sandwiches",
-      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Sandwich+Mila+XL",
-      "disponible": true
-    },
-    {
-      "id": 25,
       "nombre": "Bondiola Desmenuzada",
-      "descripcion": "CON FRITAS",
+      "descripcion": "Sándwich nuevo con fritas",
       "precio": 15000,
       "categoria": "sandwiches",
-      "imagen": "https://via.placeholder.com/300x200/95E1D3/FFFFFF?text=Bondiola+Desmenuzada",
-      "disponible": true
-    },
-    {
-      "id": 26,
-      "nombre": "Empanada - Carne (Unidad)",
-      "descripcion": "Empanada de carne",
-      "precio": 2000,
-      "categoria": "empanadas",
-      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Carne",
-      "disponible": true
-    },
-    {
-      "id": 27,
-      "nombre": "Empanada - Pollo (Unidad)",
-      "descripcion": "Empanada de pollo",
-      "precio": 2000,
-      "categoria": "empanadas",
-      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Pollo",
-      "disponible": true
-    },
-    {
-      "id": 28,
-      "nombre": "Empanada - Jamón y Queso (Unidad)",
-      "descripcion": "Empanada de jamón y queso",
-      "precio": 2000,
-      "categoria": "empanadas",
-      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Jamon+Queso",
-      "disponible": true
-    },
-    {
-      "id": 29,
-      "nombre": "Empanada - Calabresa (Unidad)",
-      "descripcion": "Empanada de calabresa",
-      "precio": 2000,
-      "categoria": "empanadas",
-      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Calabresa",
+      "tipo": "adicionales",
+      "adicionales": [
+        { "nombre": "Extra Cheddar", "precio": 2500 },
+        { "nombre": "Verdeo", "precio": 2500 },
+        { "nombre": "Salchicha", "precio": 2500 }
+      ],
       "disponible": true
     },
     {
       "id": 30,
-      "nombre": "Empanada - Cebolla y Queso (Unidad)",
-      "descripcion": "Empanada de cebolla y queso",
-      "precio": 2000,
-      "categoria": "empanadas",
-      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Cebolla+Queso",
+      "nombre": "Cheeseburger",
+      "descripcion": "La clásica con queso cheddar",
+      "precio": 11500,
+      "categoria": "hamburguesas",
+      "tipo": "variante",
+      "variantes": [
+        { "nombre": "Simple", "precio": 11500 },
+        { "nombre": "Doble", "precio": 13500 },
+        { "nombre": "Triple", "precio": 15500 },
+        { "nombre": "Cuádruple", "precio": 17500 }
+      ],
       "disponible": true
     },
     {
       "id": 31,
-      "nombre": "Empanada - Bondiola (Unidad)",
-      "descripcion": "Empanada de bondiola",
-      "precio": 2000,
-      "categoria": "empanadas",
-      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Empanada+Bondiola",
+      "nombre": "Cheesebacon",
+      "descripcion": "Cheddar y Bacon crocante",
+      "precio": 13000,
+      "categoria": "hamburguesas",
+      "tipo": "variante",
+      "variantes": [
+        { "nombre": "Simple", "precio": 13000 },
+        { "nombre": "Doble", "precio": 15000 },
+        { "nombre": "Triple", "precio": 17000 }
+      ],
       "disponible": true
     },
     {
       "id": 32,
-      "nombre": "Empanadas - 1/12 Docena (Variedad)",
-      "descripcion": "Pack 1/12 docena de empanadas - variedad",
-      "precio": 11000,
-      "categoria": "empanadas",
-      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Pack+1_12+Docena",
+      "nombre": "Burga Argenta",
+      "descripcion": "Lechuga, tomate, jamón y queso",
+      "precio": 13000,
+      "categoria": "hamburguesas",
+      "tipo": "variante",
+      "variantes": [
+        { "nombre": "Simple", "precio": 13000 },
+        { "nombre": "Doble", "precio": 15000 }
+      ],
       "disponible": true
     },
     {
       "id": 33,
-      "nombre": "Empanadas - Docena (Variedad)",
-      "descripcion": "Docena de empanadas - variedad",
+      "nombre": "Burga Dorada",
+      "descripcion": "Carne, bacon, cebolla caramelizada, baño de cheddar",
+      "precio": 15000,
+      "categoria": "hamburguesas",
+      "tipo": "variante",
+      "variantes": [
+        { "nombre": "Simple", "precio": 15000 },
+        { "nombre": "Doble", "precio": 17000 },
+        { "nombre": "Triple", "precio": 19000 }
+      ],
+      "disponible": true
+    },
+    {
+      "id": 50,
+      "nombre": "Empanada (Unidad)",
+      "descripcion": "Elegí tu gusto favorito",
+      "precio": 2000,
+      "categoria": "empanadas",
+      "tipo": "adicionales",
+      "control": "contador", 
+      "adicionales": [
+        { "nombre": "Carne", "precio": 0 },
+        { "nombre": "Pollo", "precio": 0 },
+        { "nombre": "Jamón y Queso", "precio": 0 },
+        { "nombre": "Calabresa", "precio": 0 },
+        { "nombre": "Cebolla y Queso", "precio": 0 },
+        { "nombre": "Bondiola", "precio": 0 }
+      ],
+      "disponible": true
+    },
+    {
+      "id": 51,
+      "nombre": "Docena de Empanadas",
+      "descripcion": "Armá tu docena a gusto",
       "precio": 20000,
       "categoria": "empanadas",
-      "imagen": "https://via.placeholder.com/300x200/FFB86B/FFFFFF?text=Docena+Empanadas",
+      "tipo": "adicionales",
+      "control": "contador",
+      "adicionales": [
+        { "nombre": "Carne", "precio": 0 },
+        { "nombre": "Pollo", "precio": 0 },
+        { "nombre": "Jamón y Queso", "precio": 0 },
+        { "nombre": "Calabresa", "precio": 0 },
+        { "nombre": "Cebolla y Queso", "precio": 0 },
+        { "nombre": "Bondiola", "precio": 0 }
+      ],
       "disponible": true
     },
     {
-      "id": 34,
-      "nombre": "Papas Fritas",
-      "descripcion": "Porción de papas fritas",
+      "id": 61,
+      "nombre": "Papas: Bandeja",
+      "descripcion": "Con Cheddar y Verdeo base",
       "precio": 6000,
       "categoria": "papas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Papas+Fritas",
+      "tipo": "adicionales",
+      "adicionales": [
+        { "nombre": "Salchicha", "precio": 2500 },
+        { "nombre": "Mila", "precio": 2500 },
+        { "nombre": "Bacon", "precio": 2500 }
+      ],
       "disponible": true
     },
     {
-      "id": 35,
-      "nombre": "Box chica con cheddar y verdeo",
-      "descripcion": "Box chica de papas con cheddar y verdeo",
+      "id": 62,
+      "nombre": "Papas: Box Chico",
+      "descripcion": "Con Cheddar y Verdeo base",
       "precio": 12000,
       "categoria": "papas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Box+Chica+Papas",
+      "tipo": "adicionales",
+      "adicionales": [
+        { "nombre": "Salchicha", "precio": 2500 },
+        { "nombre": "Mila", "precio": 2500 },
+        { "nombre": "Bacon", "precio": 2500 }
+      ],
       "disponible": true
     },
     {
-      "id": 36,
-      "nombre": "Caja familiar de papas con cheddar y verdeo",
-      "descripcion": "Caja familiar de papas con cheddar y verdeo",
+      "id": 63,
+      "nombre": "Papas: Caja Familiar",
+      "descripcion": "Con Cheddar y Verdeo base",
       "precio": 20000,
       "categoria": "papas",
-      "imagen": "https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Caja+Familiar+Papas",
+      "tipo": "adicionales",
+      "adicionales": [
+        { "nombre": "Salchicha", "precio": 2500 },
+        { "nombre": "Mila", "precio": 2500 },
+        { "nombre": "Bacon", "precio": 2500 }
+      ],
       "disponible": true
     },
     {
-      "id": 37,
-      "nombre": "3 Muzzas",
-      "descripcion": "Tres pizzas Muzzarella",
+      "id": 70,
+      "nombre": "Combo: 3 Muzzas",
+      "descripcion": "3 Pizzas de Muzzarella",
       "precio": 35000,
       "categoria": "combos",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=3+Muzzas",
+      "tipo": "simple",
       "disponible": true
     },
     {
-      "id": 38,
-      "nombre": "1 Muzzas + 1/2 Docena Empanadas",
-      "descripcion": "Combo: 1 pizza Muzzarella + 1/2 docena de empanadas",
+      "id": 71,
+      "nombre": "Combo: 1 Muzza + 1/2 Docena Empanadas",
+      "descripcion": "Pizza y 6 empanadas",
       "precio": 22000,
       "categoria": "combos",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Combo+Muzza+Empanadas",
+      "tipo": "simple",
       "disponible": true
     },
     {
-      "id": 39,
-      "nombre": "Mila a la Napo con papas y 2 huevos",
-      "descripcion": "CON PAPAS FRITAS Y 2 HUEVOS FRITOS (COMEN 2)",
+      "id": 72,
+      "nombre": "Combo: Mila a la Napo (Para 2)",
+      "descripcion": "Con fritas y 2 huevos fritos",
       "precio": 20000,
       "categoria": "combos",
-      "imagen": "https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Mila+Napo+Combo",
+      "tipo": "simple",
       "disponible": true
     }
   ]

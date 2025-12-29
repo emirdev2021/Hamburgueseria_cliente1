@@ -267,7 +267,27 @@ function crearCardProducto(producto) {
     const precio = document.createElement('span');
     precio.className = 'text-xl font-bold';
     precio.style.color = CONFIG.colores.primario;
-    precio.textContent = formatearPrecio(producto.precio);
+    // Mostrar precio base o 'Desde $...' para variantes si es necesario
+    if (producto.tipo === 'variante') {
+        const base = Number(producto.precio || 0);
+        if (base > 0) {
+            precio.textContent = formatearPrecio(base);
+        } else if (producto.variantes && producto.variantes.length) {
+            const minVariant = producto.variantes.reduce((min, v) => {
+                const p = Number(v.precio || Infinity);
+                return p < min ? p : min;
+            }, Infinity);
+            if (minVariant === Infinity) {
+                precio.textContent = formatearPrecio(0);
+            } else {
+                precio.textContent = `Desde ${formatearPrecio(minVariant)}`;
+            }
+        } else {
+            precio.textContent = formatearPrecio(0);
+        }
+    } else {
+        precio.textContent = formatearPrecio(producto.precio);
+    }
     
     // Botón "Agregar al Carrito"
     const btnAgregar = document.createElement('button');
@@ -304,34 +324,280 @@ function formatearPrecio(precio) {
 // ============================================
 // FUNCIÓN: Agregar Producto al Carrito
 // ============================================
-// Esta función se ejecuta cuando el usuario hace clic en "Agregar" de un producto.
-// Busca si el producto ya está en el carrito:
-// - Si está, aumenta la cantidad
-// - Si no está, lo agrega con cantidad 1
+// Esta función maneja el click en 'Agregar'.
+// - Si tipo === 'simple' -> agrega directo
+// - Si tipo === 'variante' o 'adicionales' -> abre modal para seleccionar opciones
+
+let modalProductoActual = null; // Producto que se está configurando en el modal
+let modalCounterState = {}; // Estado temporal para controles tipo contador (index -> cantidad)
 
 function agregarAlCarrito(producto) {
-    // Buscar si el producto ya existe en el carrito
-    const itemExistente = carrito.find(item => item.id === producto.id);
-    
-    if (itemExistente) {
-        // Si ya existe, aumentar la cantidad en 1
-        itemExistente.cantidad += 1;
+    if (!producto) return;
+
+    // Si el producto es simple, comportamiento previo (id como string)
+    if (producto.tipo === 'simple' || !producto.tipo) {
+        const id = String(producto.id);
+        const itemExistente = carrito.find(item => item.id === id);
+        if (itemExistente) {
+            itemExistente.cantidad += 1;
+        } else {
+            carrito.push({
+                id: id,
+                baseId: producto.id,
+                nombre: producto.nombre,
+                precio: producto.precio,
+                cantidad: 1
+            });
+        }
+        actualizarCarrito();
+        mostrarNotificacion(`${producto.nombre} agregado al carrito`);
+        return;
+    }
+
+    // Si es variante o tiene adicionales, abrir modal para seleccionar opciones
+    if (producto.tipo === 'variante' || producto.tipo === 'adicionales') {
+        abrirModalOpciones(producto);
+        return;
+    }
+
+    // Fallback: agregar como simple
+    const id = String(producto.id);
+    carrito.push({ id: id, baseId: producto.id, nombre: producto.nombre, precio: producto.precio, cantidad: 1 });
+    actualizarCarrito();
+    mostrarNotificacion(`${producto.nombre} agregado al carrito`);
+}
+
+// ============================================
+// FUNCIONES DEL MODAL (abrir, cerrar, confirmar)
+// ============================================
+function abrirModalOpciones(producto) {
+    modalProductoActual = producto;
+    const modal = document.getElementById('modal-opciones');
+    const modalTitle = document.getElementById('modal-title');
+    const modalOptions = document.getElementById('modal-options');
+    const btnConfirm = document.getElementById('modal-confirm');
+    const btnCancel = document.getElementById('modal-cancel');
+    const btnClose = document.getElementById('modal-close');
+
+    if (!modal || !modalTitle || !modalOptions) return;
+
+    modalTitle.textContent = producto.nombre;
+    modalOptions.innerHTML = '';
+
+    // Renderizar variantes (radio) o adicionales (checkboxes)
+    if (producto.tipo === 'variante' && producto.variantes && producto.variantes.length > 0) {
+        const group = document.createElement('div');
+        group.className = 'space-y-2';
+        producto.variantes.forEach((v, idx) => {
+            const id = `modal-variant-${idx}`;
+            const label = document.createElement('label');
+            label.className = 'flex items-center space-x-3';
+            label.innerHTML = `<input type="radio" name="modal-variant" id="${id}" value="${idx}" data-price="${v.precio}" class="form-radio h-4 w-4 text-green-600"><span>${v.nombre} — ${formatearPrecio(v.precio)}</span>`;
+            group.appendChild(label);
+        });
+        modalOptions.appendChild(group);
+    } else if (producto.tipo === 'adicionales' && producto.adicionales && producto.adicionales.length > 0) {
+        // Si el producto usa control tipo 'contador', renderizamos botones - / cantidad / + por sabor
+        if (producto.control === 'contador') {
+            const subtitle = document.createElement('h3');
+            subtitle.className = 'text-md font-semibold text-gray-700 mb-2';
+            subtitle.textContent = 'Elegí la cantidad por sabor:';
+            modalOptions.appendChild(subtitle);
+
+            const list = document.createElement('div');
+            list.className = 'space-y-3';
+            // Inicializar estado
+            modalCounterState = {};
+
+            producto.adicionales.forEach((a, idx) => {
+                modalCounterState[idx] = 0;
+
+                const row = document.createElement('div');
+                row.className = 'flex items-center justify-between';
+
+                const nombreSpan = document.createElement('span');
+                nombreSpan.className = 'text-gray-800';
+                nombreSpan.textContent = a.nombre;
+
+                const controls = document.createElement('div');
+                controls.className = 'flex items-center gap-2';
+
+                const btnMinus = document.createElement('button');
+                btnMinus.className = 'w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center';
+                btnMinus.textContent = '-';
+
+                const spanCount = document.createElement('span');
+                spanCount.className = 'w-8 text-center font-semibold';
+                spanCount.textContent = '0';
+
+                const btnPlus = document.createElement('button');
+                btnPlus.className = 'w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center';
+                btnPlus.textContent = '+';
+
+                btnMinus.onclick = () => {
+                    if (modalCounterState[idx] > 0) {
+                        modalCounterState[idx] -= 1;
+                        spanCount.textContent = modalCounterState[idx];
+                    }
+                };
+
+                btnPlus.onclick = () => {
+                    modalCounterState[idx] += 1;
+                    spanCount.textContent = modalCounterState[idx];
+                };
+
+                controls.appendChild(btnMinus);
+                controls.appendChild(spanCount);
+                controls.appendChild(btnPlus);
+
+                row.appendChild(nombreSpan);
+                row.appendChild(controls);
+
+                list.appendChild(row);
+            });
+
+            modalOptions.appendChild(list);
+
+        } else {
+            // Mostrar título y checkboxes (adicionales tradicionales)
+            const subtitle = document.createElement('h3');
+            subtitle.className = 'text-md font-semibold text-gray-700 mb-2';
+            subtitle.textContent = 'Agregá tus Adicionales:';
+            modalOptions.appendChild(subtitle);
+
+            const group = document.createElement('div');
+            group.className = 'space-y-2';
+            producto.adicionales.forEach((a, idx) => {
+                const id = `modal-add-${idx}`;
+                const label = document.createElement('label');
+                label.className = 'flex items-center space-x-3';
+                const priceText = (Number(a.precio) > 0) ? ` — ${formatearPrecio(a.precio)}` : '';
+                label.innerHTML = `<input type="checkbox" id="${id}" data-index="${idx}" data-price="${a.precio}" class="form-checkbox h-4 w-4 text-green-600"><span>${a.nombre}${priceText}</span>`;
+                group.appendChild(label);
+            });
+            modalOptions.appendChild(group);
+        }
     } else {
-        // Si no existe, agregarlo al carrito con cantidad 1
+        modalOptions.textContent = 'No hay opciones disponibles';
+    }
+
+    // Abrir modal
+    modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+
+    // Asignar handlers
+    btnConfirm.onclick = confirmarModalOpciones;
+    btnCancel.onclick = cerrarModalOpciones;
+    btnClose.onclick = cerrarModalOpciones;
+}
+
+function cerrarModalOpciones() {
+    const modal = document.getElementById('modal-opciones');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+    modalProductoActual = null;
+    // Limpiar estado temporal de contadores
+    modalCounterState = {};
+}
+
+function confirmarModalOpciones() {
+    if (!modalProductoActual) return;
+    const producto = modalProductoActual;
+    let finalPrice = Number(producto.precio || 0);
+    let nameSuffix = [];
+
+    if (producto.tipo === 'variante') {
+        const radios = document.querySelectorAll('input[name="modal-variant"]');
+        const selected = Array.from(radios).find(r => r.checked);
+        if (!selected) {
+            alert('Por favor, elige una opción.');
+            return;
+        }
+        const idx = parseInt(selected.value, 10);
+        const variant = producto.variantes[idx];
+        nameSuffix.push(variant.nombre);
+        // Para variantes el precio seleccionado REEMPLAZA al precio base (no se suman)
+        finalPrice = (Number(variant.precio) > 0) ? Number(variant.precio) : Number(producto.precio || 0);
+    } else if (producto.tipo === 'adicionales') {
+        if (producto.control === 'contador') {
+            // Leer estado de contadores
+            const counts = modalCounterState || {};
+            const selected = [];
+            let totalUnits = 0;
+            producto.adicionales.forEach((a, idx) => {
+                const cnt = Number(counts[idx] || 0);
+                if (cnt > 0) {
+                    selected.push({ nombre: a.nombre, cantidad: cnt });
+                    totalUnits += cnt;
+                }
+            });
+
+            if (selected.length === 0) {
+                alert('Por favor, indica la cantidad para al menos un sabor.');
+                return;
+            }
+
+            // Construir resumen: 'Carne x3, Pollo x2, ...'
+            const summaryParts = selected.map(s => `${s.nombre} x${s.cantidad}`);
+            const summary = summaryParts.join(', ');
+            nameSuffix.push(summary);
+
+            // Precio: heurística mínima
+            // Si el producto indica unidad en el nombre (p.e. 'Unidad'), multiplicar por unidades.
+            // Ej: 'Empanadas (Unidad)' precio 2000 -> total = count * 2000
+            const basePrice = Number(producto.precio || 0);
+            if (producto.nombre && producto.nombre.toLowerCase().includes('unidad')) {
+                finalPrice = basePrice * totalUnits;
+            } else {
+                // Por defecto mantener el precio base (ej: 'Docena de Empanadas' mantiene su precio)
+                finalPrice = basePrice;
+            }
+
+        } else {
+            const checkboxes = document.querySelectorAll('#modal-options input[type="checkbox"]');
+            let extras = [];
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    const idx = parseInt(cb.getAttribute('data-index'), 10);
+                    const extra = producto.adicionales[idx];
+                    if (extra) extras.push(extra);
+                }
+            });
+            if (extras.length > 0) {
+                const extrasNames = extras.map(e => e.nombre);
+                nameSuffix.push(...extrasNames);
+                const extrasTotal = extras.reduce((s, e) => s + Number(e.precio || 0), 0);
+                finalPrice = (Number(producto.precio || 0) + extrasTotal);
+            } else {
+                finalPrice = Number(producto.precio || 0);
+            }
+        }
+    }
+
+    const uidParts = [producto.id];
+    if (nameSuffix.length > 0) uidParts.push(nameSuffix.join(','));
+    const uid = uidParts.join('|');
+
+    const existing = carrito.find(i => i.id === uid);
+    const displayName = nameSuffix.length > 0 ? `${producto.nombre} - ${nameSuffix.join(', ')}` : producto.nombre;
+
+    if (existing) {
+        existing.cantidad += 1;
+    } else {
         carrito.push({
-            id: producto.id,
-            nombre: producto.nombre,
-            precio: producto.precio,
+            id: uid,
+            baseId: producto.id,
+            nombre: displayName,
+            precio: finalPrice,
             cantidad: 1
         });
     }
-    
-    // Actualizar la visualización del carrito
+
     actualizarCarrito();
-    
-    // Mostrar una animación o feedback visual (opcional)
-    mostrarNotificacion(`${producto.nombre} agregado al carrito`);
-}
+    mostrarNotificacion(`${displayName} agregado al carrito`);
+    cerrarModalOpciones();
+} 
 
 // ============================================
 // FUNCIÓN: Actualizar Visualización del Carrito
@@ -732,6 +998,24 @@ function configurarEventListeners() {
     const btnEnviar = document.getElementById('btn-enviar-whatsapp');
     if (btnEnviar) {
         btnEnviar.addEventListener('click', enviarPedidoWhatsApp);
+    }
+
+    // Listeners para modal de opciones (cerrar si clic fuera o Escape)
+    const modal = document.getElementById('modal-opciones');
+    if (modal) {
+        // Cerrar si se hace click en el overlay del modal
+        modal.addEventListener('click', (e) => {
+            if (e.target && e.target.id === 'modal-opciones') {
+                cerrarModalOpciones();
+            }
+        });
+
+        // Cerrar con Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                cerrarModalOpciones();
+            }
+        });
     }
 }
 
