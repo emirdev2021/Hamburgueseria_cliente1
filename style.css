@@ -10,6 +10,21 @@
     width: 6px;
 }
 
+/* Logo del header: aumento ~10% para mejor legibilidad del texto en la imagen */
+#logo-negocio {
+    height: 72px;      /* default (aprox 10% más que h-16 = 64px) */
+    max-width: 352px;  /* 10% más que 320px */
+    width: auto;
+}
+
+@media (min-width: 768px) {
+    /* en pantallas md+ aumentar también ~10% respecto a md:h-24 (96px -> ~106px) */
+    #logo-negocio {
+        height: 106px;
+    }
+}
+
+
 #items-carrito::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;

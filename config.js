@@ -13,16 +13,17 @@ const CONFIG = {
     telefonoWhatsApp: "5491122512344",
     
     // URL o ruta del logo del negocio
-    // Puede ser una URL externa o una ruta local como "assets/logo.png"
-    logo: "https://via.placeholder.com/150/FF6B6B/FFFFFF?text=LOGO",
+    // Se ha establecido a la versión local `Assets/images/logo.png` para cargarse sin depender de CDN
+    logo: "Assets/images/logo.png",
     
     // Colores principales del negocio (en formato hexadecimal)
+    // Paleta escogida: tonos cálidos y apetitosos (rojo profundo, ámbar) para una hamburguesería/pizzería
     colores: {
-        primario: "#FF6B6B",      // Color principal (botones, acentos)
-        secundario: "#4ECDC4",    // Color secundario (hover, detalles)
-        fondo: "#F7F7F7",         // Color de fondo de la página
-        texto: "#2C3E50",         // Color del texto principal
-        textoClaro: "#FFFFFF"     // Color del texto sobre fondos oscuros
+        primario: "#C62828",      // Rojo profundo para botones y acentos (apetitoso)
+        secundario: "#FFB300",    // Ámbar/dorado para detalles y hover
+        fondo: "#FFF8F0",         // Fondo crema suave
+        texto: "#2D2D2D",         // Texto principal oscuro
+        textoClaro: "#FFFFFF"     // Texto sobre fondos oscuros
     },
     
     // Mensaje personalizado que aparecerá antes del pedido en WhatsApp
