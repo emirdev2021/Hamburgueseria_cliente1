@@ -93,5 +93,5 @@ Estructura del JSON:
 
 ---
 
-¡Listo para personalizar y vender! 🚀
+¡Listo para personalizar y vender 🚀
 
