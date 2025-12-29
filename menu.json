@@ -15,7 +15,8 @@
       "precio": 13000,
       "categoria": "pizzas",
       "tipo": "simple",
-      "disponible": true
+      "disponible": true,
+      "imagen":"Assets/images/pizzas/pizza_muzzarella.png"
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@
       "precio": 18000,
       "categoria": "pizzas",
       "tipo": "simple",
-      "disponible": true
+      "disponible": true,
+      "imagen":"Assets/images/pizzas/pizza_napolitana.png"
     },
     {
       "id": 3,
@@ -33,7 +35,8 @@
       "precio": 18000,
       "categoria": "pizzas",
       "tipo": "simple",
-      "disponible": true
+      "disponible": true,
+      "imagen":"Assets/images/pizzas/pizza_especial.png"
     },
     {
       "id": 4,
@@ -51,7 +54,8 @@
       "precio": 20000,
       "categoria": "pizzas",
       "tipo": "simple",
-      "disponible": true
+      "disponible": true,
+      "imagen":"Assets/images/pizzas/americana.png"
     },
     {
       "id": 6,
@@ -69,7 +73,8 @@
       "precio": 22000,
       "categoria": "pizzas",
       "tipo": "simple",
-      "disponible": true
+      "disponible": true,
+      "imagen":"Assets/images/pizzas/fugazzeta.png"
     },
     {
       "id": 8,
@@ -96,7 +101,8 @@
       "precio": 35000,
       "categoria": "pizzas",
       "tipo": "simple",
-      "disponible": true
+      "disponible": true,
+      "imagen":"Assets/images/pizzas/milapizza.png"
     },
     {
       "id": 20,
@@ -114,6 +120,7 @@
     },
     {
       "id": 21,
+      "imagen":"Assets/images/sandwiches/milaXL.png",
       "nombre": "Sándwich de Mila XL",
       "descripcion": "Con huevo, lechuga, tomate, jamón, queso y fritas",
       "precio": 15000,
@@ -128,6 +135,7 @@
     },
     {
       "id": 22,
+      "imagen":"Assets/images/sandwiches/bondiola.png",
       "nombre": "Bondiola Desmenuzada",
       "descripcion": "Sándwich nuevo con fritas",
       "precio": 15000,
@@ -157,6 +165,7 @@
     },
     {
       "id": 31,
+      "imagen":"Assets/images/burgers/cheesebacon_doble.png",
       "nombre": "Cheesebacon",
       "descripcion": "Cheddar y Bacon crocante",
       "precio": 13000,
@@ -198,6 +207,7 @@
     },
     {
       "id": 50,
+      "imagen":"Assets/images/empanadas/empanadas.png",
       "nombre": "Empanada (Unidad)",
       "descripcion": "Elegí tu gusto favorito",
       "precio": 2000,
@@ -216,6 +226,7 @@
     },
     {
       "id": 51,
+      "imagen":"Assets/images/empanadas/empanadas2.png",
       "nombre": "Docena de Empanadas",
       "descripcion": "Armá tu docena a gusto",
       "precio": 20000,
